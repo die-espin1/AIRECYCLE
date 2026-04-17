@@ -1,0 +1,16 @@
+
+.letras{
+    
+    color: white; /* Cambia el color de las letras a blanco */
+}
+
+.numero{
+    
+    color: white; /* Cambia el color de las letras a blanco */
+}
+
+/* Establece el fondo en negro para todo el contenido */
+body {
+    background-color: black !important;
+}
+

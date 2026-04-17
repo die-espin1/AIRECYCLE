@@ -1,0 +1,133 @@
+/* Estilo del cuerpo (body) */
+body {
+  margin: 0;
+  background-color: #010101; /* Fondo de color */
+}
+
+/* Estilo para el contenedor del video */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fondo de color detrás del video */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #010101; /* Fondo de color */
+}
+
+/* Estilo para el video */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+/* Estilo para el poster */
+video[poster] {
+  position: absolute;
+  width: 90%; /* Ajusta el ancho del poster según tus preferencias */
+  max-height: 90%; /* Ajusta la altura máxima del poster según tus preferencias */
+  object-fit: contain;
+  animation: zoomInOut 2s ease-in-out infinite alternate;
+  z-index: -1; /* Coloca el poster detrás del contenido */
+}
+
+/* Resto de tu CSS aquí... */
+
+/* Estilo para el contenido de la página */
+.content {
+  position: relative;
+  z-index: 1; /* Coloca el contenido sobre el video y el fondo de color */
+  /* Agrega estilos adicionales según tu diseño */
+}
+
+/* Estilo del contenedor */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #000000; */
+  overflow: hidden;
+}
+
+/* Estilo de la botella */
+.bottle {
+  width: auto;
+  height: 300px;
+  opacity: 0; /* Inicialmente oculta la botella */
+  animation: bottleAppear 2s ease-in-out forwards, bottleAnimation ease-in-out infinite alternate 2s;
+}
+
+/* Animación de aparición de la botella */
+@keyframes bottleAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1; /* Aparece con opacidad completa */
+    transform: scale(1);
+  }
+}
+
+/* Animación de achicarse y agrandarse de la botella */
+@keyframes bottleAnimation {
+  0% {
+    transform: scale(1.1); /* Inicio más grande */
+  }
+  100% {
+    transform: scale(0.9); /* Final más pequeño */
+  }
+}
+
+/* Estilo del contenedor de texto */
+.text-container {
+  text-align: center;
+  margin-top: 20px; /* Espacio entre la botella y el texto */
+}
+
+/* Estilo del texto en español */
+.text-es {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  opacity: 0; /* Inicialmente oculta el texto */
+  animation: textAppear 2s ease-in-out both;
+}
+
+/* Estilo del texto en inglés */
+.text-en {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  color: white;
+  margin: 0;
+  opacity: 0; /* Inicialmente oculta el texto */
+  animation: textAppear 2s ease-in-out both;
+}
+
+/* Animación de aparición del texto */
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /* Aparece con opacidad completa */
+  }
+}
